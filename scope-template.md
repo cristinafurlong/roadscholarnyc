@@ -1,14 +1,14 @@
 ## Product Name
 
-(It's part of the brand, so think about it)
+It's part of the brand, so think about it.
 
 ## Goal
 
-(No more than three sentences)
+No more than three sentences
 
 ## Key Users
 
-(One sentence)
+One sentence
 
 ## Features
 
@@ -16,10 +16,14 @@
 - eg. mechanism that allows each user to upload a video from their desktop/phone
 - ...
 
-(Match your features and wireframes. _Pics or it didn't happen._)
+Match your features and wireframes. _Pics or it didn't happen._
 
 ## Data
 
-(If applicable; this includes data you are creating yourself.)
+If applicable; this includes data you are creating yourself.
+
+## Data-related work
+
+List what you know. We will workshop this further.
 
 ## Tabled ideas
