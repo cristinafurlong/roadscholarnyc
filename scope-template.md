@@ -16,7 +16,7 @@ One sentence
 - eg. mechanism that allows each user to upload a video from their desktop/phone
 - ...
 
-Match your features and wireframes. _Pics or it didn't happen._
+Translate your features from your wireframes. This means that you only include what you have included on the wireframe. Intangible ideas do not count. As some might say, _pics or it didn't happen._
 
 ## Data
 
