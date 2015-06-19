@@ -12,8 +12,11 @@
 
 ## Features
 
-- feature 1
-- feature 2
+- eg. autofill the search field when terms are typed in
+- eg. mechanism that allows each user to upload a video from their desktop/phone
+- ...
+
+(Match your features and wireframes. _Pics or it didn't happen._)
 
 ## Data
 
