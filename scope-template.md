@@ -1,14 +1,14 @@
 ## Product Name
 
-(It's part of the brand, so think about it.)
+(It's part of the brand, so think about it)
 
 ## Goal
 
-(No more than three sentences.)
+(No more than three sentences)
 
 ## Key Users
 
-(one phrase)
+(One sentence)
 
 ## Features
 
