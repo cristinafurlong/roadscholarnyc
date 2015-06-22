@@ -35,7 +35,7 @@ Hoping to also input collision data
 I will need to find related fields in school data in order to link them for CartoDB 
 
 ## Tabled ideas
-Additional features and interactivity that got scrapped:
-A complaint form which would link to NYC's 311 online complaint forms.
-A forum section, where users could rant and rave about their specific issues. 
-A section that would list updates based on the complaints in the forum.
+Additional features and interactivity that got scrapped:           
+A complaint form which would link to NYC's 311 online complaint forms.            
+A forum section, where users could rant and rave about their specific issues.                
+A section that would list updates based on the complaints in the forum.            
