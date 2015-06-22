@@ -1,12 +1,13 @@
 ## Product Name
 
-It's part of the brand, so think about it.
+The Road Scholar guide to school safety & pedestrian issues in your neighborhood. NYC! 
 
 ## Goal
 
-No more than three sentences
+This mapping tool will help community members look at their geographic area with key insights into the enrollment numbers at local schools, the police precincts that attend their needs, and the number of car collisions that have happened on specific streets. The map will make it easy to access key information which will inform their discussions about traffic safety. The map will be the "Big Picture" that people in government, the department of education and in local schools. Pedestrian safety issues can be addressed more easily by just having access to the key data and school locations provided. 
 
 ## Key Users
+School administrators- Principals, PTA leaders, Parent Coordinators, Parents and community groups. 
 
 One sentence
 
