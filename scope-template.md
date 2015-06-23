@@ -24,7 +24,8 @@ Users will be able to access their neighborhood of interest by typing in zip cod
 school name: https://data.cityofnewyork.us/Education/School-Point-Locations/jfju-ynrr
 enrollment: see link on http://data.schoolbook.org/, a good resource for other school related data
 after school program: https://data.cityofnewyork.us/Social-Services/After-School-Programs/6ej9-7qyi
-UPK https://data.cityofnewyork.us/Education/Universal-Pre-K-UPK-School-Locations/kiyv-ks3f
+UPK https://data.cityofnewyork.us/Education/Universal-Pre-K-UPK-School-Locations/kiyv-ks3f          
+Queens Zip Codes http://www.mapsofworld.com/usa/zipcodes/new-york/queens/
 
 
 ## Data-related work
