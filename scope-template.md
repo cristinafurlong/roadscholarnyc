@@ -15,7 +15,6 @@ School administrators- Principals, PTA leaders, Parent Coordinators, Parents and
 School location, and after school locations, including Universal Pre-Kindergarten seats.
 Student enrollment numbers at each school. 
 Map area will cover the borough of Queens.
-There will be a crowdsourcing tool, so that users can submit the locations of crossing guards in their neighborhood. This will be a form, at a separate URL.
 Users will be able to access their neighborhood of interest by typing in zip code. 
 
 
@@ -39,4 +38,6 @@ I will need to find related fields in school data in order to link them for Cart
 Additional features and interactivity that got scrapped:           
 A complaint form which would link to NYC's 311 online complaint forms.            
 A forum section, where users could rant and rave about their specific issues.                
-A section that would list updates based on the complaints in the forum.            
+A section that would list updates based on the complaints in the forum.  
+Getting rid of the crowd-sourcing option for folks to write it. 
+[Imgur](http://i.imgur.com/G2NR00p.png)
