@@ -39,5 +39,5 @@ Additional features and interactivity that got scrapped:
 A complaint form which would link to NYC's 311 online complaint forms.            
 A forum section, where users could rant and rave about their specific issues.                
 A section that would list updates based on the complaints in the forum.  
-Getting rid of the crowd-sourcing option for folks to write it. 
-[Imgur](http://i.imgur.com/G2NR00p.png)
+Getting rid of the crowd-sourcing option for folks to write it.                   
+http://imgur.com/G2NR00p
