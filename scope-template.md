@@ -1,4 +1,5 @@
 ## Product Name
+## Product Name
 
 The Road Scholar guide to school safety & pedestrian issues in your neighborhood. NYC! 
 
@@ -15,13 +16,14 @@ School administrators- Principals, PTA leaders, Parent Coordinators, Parents and
 School location, and after school locations, including Universal Pre-Kindergarten seats.
 Student enrollment numbers at each school. 
 Map area will cover the borough of Queens.
+There will be a crowdsourcing tool, so that users can submit the locations of crossing guards in their neighborhood. This will be a form, at a separate URL.
 Users will be able to access their neighborhood of interest by typing in zip code. 
 
 
 ## Data
 
 school name: https://data.cityofnewyork.us/Education/School-Point-Locations/jfju-ynrr
-enrollment: see link on http://data.schoolbook.org/, a good resource for other school related data
+
 after school program: https://data.cityofnewyork.us/Social-Services/After-School-Programs/6ej9-7qyi
 UPK https://data.cityofnewyork.us/Education/Universal-Pre-K-UPK-School-Locations/kiyv-ks3f          
 Queens Zip Codes http://www.mapsofworld.com/usa/zipcodes/new-york/queens/
@@ -38,7 +40,9 @@ I will need to find related fields in school data in order to link them for Cart
 Additional features and interactivity that got scrapped:           
 A complaint form which would link to NYC's 311 online complaint forms.            
 A forum section, where users could rant and rave about their specific issues.                
-A section that would list updates based on the complaints in the forum.  
-Getting rid of the crowd-sourcing option for folks to write it.                   
-This is what the map will look like    http://i.imgur.com/G2NR00p.png
-Sample school data will pop up in a window like this   http://i.imgur.com/MNmBejG.png   
+A section that would list updates based on the complaints in the forum.            
+##Updates
+I've been able to import geo-located data on collisions, after schools, and UPK into CartoDb
+https://cristina-furlong.cartodb.com/viz/e1479718-1e90-11e5-94d4-0e9d821ea90d/public_map
+
+https://cristina-furlong.cartodb.com/viz/dca04252-0aed-11e5-95f5-0e6e1df11cbf/public_map
