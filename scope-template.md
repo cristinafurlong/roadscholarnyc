@@ -1,5 +1,4 @@
 ## Product Name
-## Product Name
 
 The Road Scholar guide to school safety & pedestrian issues in your neighborhood. NYC! 
 
@@ -18,6 +17,8 @@ Student enrollment numbers at each school.
 Map area will cover the borough of Queens.
 There will be a crowdsourcing tool, so that users can submit the locations of crossing guards in their neighborhood. This will be a form, at a separate URL.
 Users will be able to access their neighborhood of interest by typing in zip code. 
+There will be different interfaces, based on toggles and they will be used to layer the map with other important data, such as the collision, or crossing guard info. 
+
 
 
 ## Data
