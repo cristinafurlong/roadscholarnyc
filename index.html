@@ -24,22 +24,17 @@
 			L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
 				attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
 			}).addTo(map);
-										
-			// temporary -- school is under jue's account currently, needs to be moved to cris's account
-			var schools = {
-				user_name: 'jue',
-				type: 'cartodb',
-				sublayers: [{
-						sql: 'SELECT * FROM school_clean_geo_merge WHERE boronum = 4', // select schools in Queens
-						cartocss: '#school_clean_geo_merge {marker-fill: #5770BB; marker-width:7;}',
-						interactivity: 'school_name, total_enrollment'
-				}]
-			};
 
-			var programs = {
+			var layers = {
 				user_name:'cristina-furlong',
 				type: 'cartodb',
 				sublayers:[
+					// schools
+					{
+						sql: 'SELECT * FROM school_clean_geo_merge WHERE boronum = 4', // select schools in Queens
+						cartocss: '#school_clean_geo_merge {marker-fill: #5770BB; marker-width:7;}',
+						interactivity: 'school_name, total_enrollment'
+					},
 					// UPK
 					{
 						sql: 'SELECT * FROM soj_universal_pre_',
@@ -67,23 +62,13 @@
 				]
 			}
 
-
-			cartodb.createLayer(map, schools)
-				.addTo(map)
-				.on('done', function(layer) {
-					// detour to add infowindow, no better way?
-					// http://bl.ocks.org/xavijam/9269220
-					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(0), ['school_name','total_enrollment']);
-				}).on('error', function(error) {
-					console.error(error)
-				});
-
-			cartodb.createLayer(map,programs)
+			cartodb.createLayer(map,layers)
 				.addTo(map)
 				.on('done', function(layer){
-					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(0), ['locname','seats']);
-					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(1), ['agency','program']);
-					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(2), ['contributing_factor_vehicle_1','vehicle_type_code_1','date']);
+					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(0), ['school_name','total_enrollment']);
+					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(1), ['locname','seats']);
+					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(2), ['agency','program']);
+					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(3), ['contributing_factor_vehicle_1','vehicle_type_code_1','date']);
 				});
 	</script>
 </body>
