@@ -1,0 +1,39 @@
+html,
+body {
+	width:100%;
+	height:100%;
+	padding: 0;
+	margin: 0;
+	font:sans-serif;
+	}
+ul li {
+	list-style:none;
+}
+#map {
+	width: 100%;
+	height:100%;
+	}
+#legend {
+	position:absolute;
+	padding:20px;
+	bottom:20px;
+	right:20px;
+	background:#fff;
+	}
+
+#legend li {
+	padding-left:13px;
+	}
+#legend li:before {
+	content:'';
+	position:absolute;
+	margin:3px 0 0 -20px;
+	display:block;
+	width:10px;
+	height:10px;
+	}
+li.school:before	  {background: #4BCAFF;border-radius:50%;}
+li.upk:before	 	  {background: #7991FF;border-radius:50%;}
+li.afterschool:before {background: #69FF9B;border-radius:50%;}
+li.accident:before 	  {background: #FFFFFF;border-radius:50%; border: 1px solid #000;}
+li.precinct:before 	  {background: #CCCCCC;border: 2px solid #000;}
