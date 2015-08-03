@@ -29,6 +29,11 @@
 				user_name:'cristina-furlong',
 				type: 'cartodb',
 				sublayers:[
+					// precinct
+					{
+						sql: 'SELECT * FROM soj_nypp WHERE precinct >= 100 AND precinct <=115', // 100-115 are precincts in Queens
+						cartocss: '#soj_nypp {polygon-fill: #000;polygon-opacity:0.1;line-color:#000;}'
+					},
 					// schools
 					{
 						sql: 'SELECT * FROM school_clean_geo_merge WHERE boronum = 4', // select schools in Queens
@@ -53,22 +58,16 @@
 						cartocss: '#soj_nypd_motor_vehicle_collisions_4 {marker-fill: #f00; marker-width:7; marker-line-width:0;}',
 						interactivity: 'contributing_factor_vehicle_1, vehicle_type_code_1, date'
 					},
-					// precinct
-					// {
-					// 	sql: 'SELECT * FROM soj_nypp WHERE precinct >= 100 AND precinct <=115', // select precincts in Queens http://www.nyc.gov/html/nypd/html/home/precincts.shtml
-					// 	sql: 'SELECT * FROM soj_nypp',
-					// 	cartocss: '#soj_nypp {polygon-fill: #000; polygon-fill-opacity:0.2;}'
-					// }
 				]
 			}
 
 			cartodb.createLayer(map,layers)
 				.addTo(map)
 				.on('done', function(layer){
-					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(0), ['school_name','total_enrollment']);
-					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(1), ['locname','seats']);
-					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(2), ['agency','program']);
-					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(3), ['contributing_factor_vehicle_1','vehicle_type_code_1','date']);
+					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(1), ['school_name','total_enrollment']);
+					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(2), ['locname','seats']);
+					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(3), ['agency','program']);
+					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(4), ['contributing_factor_vehicle_1','vehicle_type_code_1','date']);
 				});
 	</script>
 </body>
