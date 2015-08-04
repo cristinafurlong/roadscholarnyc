@@ -11,6 +11,11 @@
 </head>
 
 <body>
+	<div class='explain'>
+		<h1>Road Scholar NYC <span id='precinct'></span></h1>
+		<p>Hover over a precinct to get the precinct number. Click on markers for details of school programs and traffic accidents.</p>
+	</div>
+	<div id='map'></div>
 	<ul id='legend'>
 		<li class='school'>Schools</li>
 		<li class='upk'>Universal Pre-K</li>
@@ -18,11 +23,6 @@
 		<li class='accident'>Traffic incidents</li>
 		<li class='precinct'>Precinct</li>
 	</ul>
-	<div class='explain'>
-		<p>Hover over a precinct to get the precinct number. Click on markers for details of school programs and traffic accidents.</p>
-		<p id='precinct'></p>
-	</div>
-	<div id='map'></div>
 	<script>
 			var map = new L.Map('map', { 
 				center: [40.7371782,-73.858452],
@@ -95,7 +95,7 @@
 					layer.setInteraction(true);
 					layer
 						.on('featureOver',function(e, latlng, pos, data, subLayerIndex){
-							document.getElementById('precinct').innerHTML = 'NYPD precinct ' + data.precinct;
+							document.getElementById('precinct').innerHTML = '- NYPD precinct ' + data.precinct;
 						})
 						.on('featureOut',function(e, latlng, pos, data, subLayerIndex){
 							document.getElementById('precinct').innerHTML = '';
