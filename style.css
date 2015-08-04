@@ -37,3 +37,14 @@ li.upk:before	 	  {background: #7991FF;border-radius:50%;}
 li.afterschool:before {background: #69FF9B;border-radius:50%;}
 li.accident:before 	  {background: #FFFFFF;border-radius:50%; border: 1px solid #000;}
 li.precinct:before 	  {background: #CCCCCC;border: 2px solid #000;}
+
+.explain {
+	text-align:center;
+	padding:20px;
+	height:40px;
+}
+
+#precinct {
+	padding-top:10px;
+	font-weight:bold;
+}

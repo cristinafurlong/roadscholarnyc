@@ -11,7 +11,6 @@
 </head>
 
 <body>
-	<div id='map'></div>
 	<ul id='legend'>
 		<li class='school'>Schools</li>
 		<li class='upk'>Universal Pre-K</li>
@@ -19,11 +18,16 @@
 		<li class='accident'>Traffic incidents</li>
 		<li class='precinct'>Precinct</li>
 	</ul>
+	<div class='explain'>
+		<p>Hover over a precinct to get the precinct number. Click on markers for details of school programs and traffic accidents.</p>
+		<p id='precinct'></p>
+	</div>
+	<div id='map'></div>
 	<script>
 			var map = new L.Map('map', { 
 				center: [40.7371782,-73.858452],
 				zoom: 12,
-				minZoom: 12,
+				// minZoom: 12,
 				maxZoom: 15
 			});
 
@@ -32,15 +36,10 @@
 				attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
 			}).addTo(map);
 
-			var layers = {
+			var programs = {
 				user_name:'cristina-furlong',
 				type: 'cartodb',
 				sublayers:[
-					// precinct
-					{
-						sql: 'SELECT * FROM soj_nypp WHERE precinct >= 100 AND precinct <=115', // 100-115 are precincts in Queens
-						cartocss: '#soj_nypp {polygon-fill: #000;polygon-opacity:0.1;line-color:#000;}'
-					},
 					// schools
 					{
 						sql: 'SELECT * FROM school_clean_geo_merge WHERE boronum = 4', // select schools in Queens
@@ -57,25 +56,52 @@
 					{
 						sql: 'SELECT * FROM soj_dycd_after_school_programs_csv',
 						cartocss: '#soj_dycd_after_school_programs_csv {marker-fill: #69FF9B; marker-width:7; marker-line-width:0;}',
-						interactivity: 'agency,program'
+						interactivity: 'agency, program, precinct'
 					},
 					// collision
 					{
 						sql: 'SELECT * FROM soj_nypd_motor_vehicle_collisions_4',
 						cartocss: '#soj_nypd_motor_vehicle_collisions_4 {marker-fill: #000; marker-width:4; marker-line-width:0.5;marker-fill-opacity:0;}',
-						interactivity: 'contributing_factor_vehicle_1, vehicle_type_code_1, date'
+						interactivity: 'contributing_factor_vehicle_1, vehicle_type_code_1, precinct, date'
 					},
 				]
-			}
+			};
 
-			cartodb.createLayer(map,layers)
+			var precincts = {
+				user_name:'cristina-furlong',
+				type: 'cartodb',
+				sublayers:[
+					// precinct
+					{
+						sql: 'SELECT * FROM soj_nypp WHERE precinct >= 100 AND precinct <=115', // 100-115 are precincts in Queens
+						cartocss: '#soj_nypp {polygon-fill: #fff;polygon-opacity:0.1;line-color:#000;}',
+						interactivity: 'precinct'
+					}
+				]
+			};
+
+			cartodb.createLayer(map,programs)
 				.addTo(map)
 				.on('done', function(layer){
-					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(1), ['school_name','total_enrollment']);
-					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(2), ['locname','seats']);
-					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(3), ['agency','program']);
-					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(4), ['contributing_factor_vehicle_1','vehicle_type_code_1','date']);
+					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(0), ['school_name','total_enrollment']);
+					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(1), ['locname','seats']);
+					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(2), ['agency','program','precinct']);
+					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(3), ['contributing_factor_vehicle_1','vehicle_type_code_1','date','precinct']);
 				});
+
+			cartodb.createLayer(map,precincts)
+				.addTo(map)
+				.on('done', function(layer){
+					layer.setInteraction(true);
+					layer
+						.on('featureOver',function(e, latlng, pos, data, subLayerIndex){
+							document.getElementById('precinct').innerHTML = 'NYPD precinct ' + data.precinct;
+						})
+						.on('featureOut',function(e, latlng, pos, data, subLayerIndex){
+							document.getElementById('precinct').innerHTML = '';
+						})
+				});
+
 	</script>
 </body>
 </html>
