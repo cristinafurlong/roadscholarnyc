@@ -83,6 +83,8 @@
 			cartodb.createLayer(map,programs)
 				.addTo(map)
 				.on('done', function(layer){
+					// add info window using createLayer, see link
+					// http://bl.ocks.org/xavijam/9269220
 					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(0), ['school_name','total_enrollment']);
 					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(1), ['locname','seats']);
 					cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(2), ['agency','program','precinct']);
